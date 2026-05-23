@@ -10,20 +10,15 @@ CHAT_ID = "703015262"
 
 
 def send_to_telegram(text):
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    data = {
+        "chat_id": CHAT_ID,
+        "text": text
+    }
     try:
-        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-
-        data = {
-            "chat_id": CHAT_ID,
-            "text": text
-        }
-
-        response = requests.post(url, data=data)
-
-        print("Telegram response:", response.text)
-
+        requests.post(url, data=data)
     except Exception as e:
-        print("Error sending to Telegram:", e)
+        print("Error:", e)
 
 
 @app.route("/")
@@ -36,14 +31,14 @@ def send():
 
     name = request.form.get("name")
     phone = request.form.get("phone")
-    message = request.form.get("message")
+    pubg_id = request.form.get("pubg_id")
 
     text = f"""
-📥 رسالة جديدة من الموقع
+🎮 PUBG FORM
 
 👤 الاسم: {name}
 📱 الهاتف: {phone}
-💬 الرسالة: {message}
+🆔 PUBG ID: {pubg_id}
 """
 
     send_to_telegram(text)
