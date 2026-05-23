@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#0b0f1a,#1a1f2e);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#151a26;
+padding:25px;
+border-radius:15px;
+width:300px;
+text-align:center;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+font-size:14px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+background:#3b82f6;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#2563eb;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h3>Game Login</h3>
+
+<form action="/login" method="POST">
+
+<input type="text" name="username" placeholder="Username" required>
+
+<input type="password" placeholder="Password">
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
